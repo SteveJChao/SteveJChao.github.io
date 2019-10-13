@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="很久之前看的ResNet，现在对它粗略的整理一下。 Link: ResNet  首先在训练层数很深的神经网络的时候会存在两个问题。  $Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」在back propagation中链式法则求导的公式如下所示   $\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xjc_Deep-Residual-Learning-for-Image-Recognition">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/index.html">
+<meta property="og:site_name" content="inside SteveChao">
+<meta property="og:description" content="很久之前看的ResNet，现在对它粗略的整理一下。 Link: ResNet  首先在训练层数很深的神经网络的时候会存在两个问题。  $Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」在back propagation中链式法则求导的公式如下所示   $\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-0fea77af6f4cd8c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-9ec5609d6acfc97c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-60d2acc173e8de80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-10-13T07:43:48.992Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xjc_Deep-Residual-Learning-for-Image-Recognition">
+<meta name="twitter:description" content="很久之前看的ResNet，现在对它粗略的整理一下。 Link: ResNet  首先在训练层数很深的神经网络的时候会存在两个问题。  $Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」在back propagation中链式法则求导的公式如下所示   $\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15341440-0fea77af6f4cd8c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.jpg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>xjc_Deep-Residual-Learning-for-Image-Recognition</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">About</a></li>
+         
+          <li><a href="/work/">Work</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/deepLearning">Deep Learning</a></li>
+         
+          <li><a href="/photography/">Photography</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/10/13/xjc-ClusterNet-Deep-Hierarchical-Cluster-Network-with-Rigorously-Rotation-Invariant-Representation-for-Point-Cloud-Analysis/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Següent</span>
+      <span id="i-top" class="info" style="display:none;">Adalt</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&text=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&is_video=false&description=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=xjc_Deep-Residual-Learning-for-Image-Recognition&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&name=xjc_Deep-Residual-Learning-for-Image-Recognition&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#BOTTLENECK"><span class="toc-number">1.</span> <span class="toc-text">BOTTLENECK</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        xjc_Deep-Residual-Learning-for-Image-Recognition
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">inside SteveChao</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-10-13T07:41:31.000Z" itemprop="datePublished">2019-10-13</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>很久之前看的ResNet，现在对它粗略的整理一下。</p>
+<p>Link: <a href="http://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf" target="_blank" rel="noopener">ResNet</a></p>
+<hr>
+<p>首先在训练层数很深的神经网络的时候会存在两个问题。</p>
+<ul>
+<li><strong>$Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」</strong><br>在back propagation中链式法则求导的公式如下所示</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15341440-0fea77af6f4cd8c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="back propagation"></p>
+<p>$\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid以及更常用的ReLU，其中对于sigmoid求导的最大值是1/4，而对于relu求导的最大值是1，同时权重$w$是通常是通过正态分布的方式产生的，所以$w$的值大多数分布在0附近，从而导致$\prod{w}$的值很小，从而出现了梯度消失的现象。而如果恰好$w$的值比较大(相比于1)，那么就会导致$\prod{w}$出现爆炸的现象。</p>
+<p>但是这个问题已经被「Batch Normalization」解决了。通过对每一层的参数进行Normalize，利用标准差$\sigma$来scale对应的权重，使得小的权重变大，大的权重变小，从而缓解了梯度消失或者是梯度爆炸的现象。</p>
+<p>More details: <a href="https://www.zhihu.com/question/38102762/answer/391649040" target="_blank" rel="noopener">https://www.zhihu.com/question/38102762/answer/391649040</a></p>
+<ul>
+<li><strong>$Q_2:$ 随着网络层数的增加，网络的效果急速下降 「Degradation」</strong></li>
+</ul>
+<p>这是一位违反直觉「Counterintuitive」的现象：<br>经过大量的实验证明，对于普通的网络「Plain Network」，如果存在一个已经训练好的最优网络(结构和参数都已经确定)，若再继续堆叠网络神经元，那么会导致整个网络的表现变得更差，<strong>但是</strong>子网络的Output Space应该是父网络的Output Space的子集，因为只需要将剩下的层改为恒等变化「即输入等于输出」，也就是说继续堆叠后的网络的Output Space中应该至少存在与先前最优网络相同的解，只是无法训练得到。</p>
+<p>观察Fig.1的左边的网络，如果由浅层网络输出的结果x已经达到了最优解，那么只需要将接下来的两层神经层训练为Identity Map，即恒等变换就可以保证输出的结果不会变差，但是实际上出现的现象就是，堆叠更多的网络层会导致Degradation。「作者在论文中一开始是认为，更深的网络由于其梯度下降的比较慢所以使得效果变差，因此尝试利用3倍的迭代次数进行训练，但是效果仍然没有变好，因此他认为不能将这个问题简单地归咎于梯度下降速度慢。」</p>
+<p>面对这个Degradation的现象，作者认为两层网络拟合一个Identity Map的难度比较大，因此作者放弃了拟合恒等变换而拟合残差「Residual」F(x)=H(x)-x，如果浅层的输出x真的已经达到了最优，那么只需要让新堆叠的网络层拟合全0的输出(F(x)=0)即可，而拟合全0相比于拟合一个恒等变换的难度大大减小。在真实的情况中，往往并不会真正只要求一个恒等变换，但是由于在深层网络中前面几层的网络已经拟合了大部分内容，而后面叠加的新网络只需要对前面的输出学习一些比较小的扰动「Perturbations」即可，因此这个学习也是比较容易的。</p>
+<p>所以作者建立了一个如图Fig.1 右边所示的block，将浅层网络的输出直接通过skip connection直接送到后面。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15341440-9ec5609d6acfc97c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fig.1 "></p>
+<hr>
+<p>整个Residual Block的优点如下所示</p>
+<ul>
+<li><ol>
+<li>使整个网络训练更敏感，对细节更敏感<br>在plain network中，学习的目标是函数H，例如需要学习的是H(5) = 5.1，但是在Residual Network中，需要学习的是函数F(也就是残差 Residual，因为目标是H(x)，已拥有x，那么残差就是F(x) = H(x) - x)，所以需要学习F(5) = H(5) - 5 = 0.1。现在考虑如果学习目标变化为H(5) = 5.2，那么在Plain Network中造成的变化是2%，而在Residual Network中学习F(5) = 0.2，变化了100%，所以Residual Network对变化更敏感。</li>
+</ol>
+</li>
+<li><ol>
+<li>更容易学习<br>从数学上来说，论文作者简单地比较了残差结构和常规结构在求解本征映射(identity map)时的优化难度，显然求解F(x)=0比求解H(x) = x容易得多。也就是说，假设已有的浅层网络结构已经最优化，我们的目标只要使堆叠的深层网络是个identity network即可，所以在Plain Network中是需要H(x) = x，而Residual Network则只需F(x)=0。</li>
+</ol>
+</li>
+<li><ol>
+<li>解决了梯度消失/爆炸<br>我们可以知道ResNet的可以简单的表示为如下所示<br>$$<br>x_{l+1}=x_l+F(x_l, W<em>l)<br>$$<br>其中$x</em>{l+1}$/$x_l$分别表示的是第$l$层的输出以及输入，那么对于并不相连的第$L$层以及$l$层，对应学习的特征可以表示为<br>$$<br>x<em>L = x</em>{L-1}+F(x<em>{L-1}, W</em>{L-1})=x<em>{L-1} + x</em>{L-2}+F(x<em>{L-2}, W</em>{L-2})=x<em>l+\sum</em>{i=l}^{L-1}F(x_i, W_i)<br>$$<br>接下来在反向梯度求导的过程中，当最后的loss在$x_l$处求导，可得<br>$$<br>\frac{\partial loss}{\partial x_l}=\frac{\partial loss}{\partial x_L}·\frac{\partial x_L}{\partial x_l}=\frac{\partial loss}{\partial x_L}·\frac{\partial (x<em>l+\sum</em>{i=l}^{L-1}F(x_i, W_i))}{\partial x_l}=\frac{\partial loss}{\partial x_L}·(1+\ …)<br>$$<br>上面这个式子没有写全，但是我们可以看到求出的导数是在L层的导数乘上括号内的数，存在一个1，就表示L层的梯度可以直接无损地向后传播。</li>
+</ol>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15341440-60d2acc173e8de80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Bottleneck"></p>
+<h3 id="BOTTLENECK"><a href="#BOTTLENECK" class="headerlink" title="BOTTLENECK"></a>BOTTLENECK</h3><p>当我们更加细致的观察ResNet的细节的时候，我们能够发现ResNet中还使用了一个「Bottleneck」模块，如上图所示，充分地利用了<strong>单位卷积核</strong>，输入数据的维数（如原先是256维）先被减少（变为64维），然后使得一个size比较大的卷积核能够在比较小的维度上进行操作，然后再利用一个单位卷积核将减小的维度（64维）重新放大到原来的样子（256维）。从而能够在处理更加大的维度的特征的同时，保持一个比较小的计算时间。</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">About</a></li>
+         
+          <li><a href="/work/">Work</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/deepLearning">Deep Learning</a></li>
+         
+          <li><a href="/photography/">Photography</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#BOTTLENECK"><span class="toc-number">1.</span> <span class="toc-text">BOTTLENECK</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&text=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&is_video=false&description=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=xjc_Deep-Residual-Learning-for-Image-Recognition&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&name=xjc_Deep-Residual-Learning-for-Image-Recognition&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menú</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Cap amunt</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 SteveChao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">About</a></li>
+         
+          <li><a href="/work/">Work</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/deepLearning">Deep Learning</a></li>
+         
+          <li><a href="/photography/">Photography</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
