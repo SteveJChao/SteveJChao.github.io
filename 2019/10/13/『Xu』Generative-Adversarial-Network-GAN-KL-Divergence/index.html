@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="首先作为题外话，先介绍一下GAN其实是一种结构化学习。平是最常见的拟合/回归是一种非结构化学习，它们输出的是标量或者向量这些简单的数据，但是对于结构化学习可能输出的是序列、矩阵、树（例如可以学习语法解析树），所以GAN现在最常用的就是生成以假乱真的图片，因此是一种结构化学习。  GAN的主要目的就是拟合一个真实数据的分布，从而能够获得一个能够以假乱真的『生成器』，通过输入随机的噪声得到一个不能被轻">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xjc_Generative-Adversarial-Network-GAN-KL-Divergence">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/index.html">
+<meta property="og:title" content="『Xu』Generative Adversarial Network (GAN) &#x2F; KL Divergence">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/index.html">
 <meta property="og:site_name" content="inside SteveChao">
 <meta property="og:description" content="首先作为题外话，先介绍一下GAN其实是一种结构化学习。平是最常见的拟合/回归是一种非结构化学习，它们输出的是标量或者向量这些简单的数据，但是对于结构化学习可能输出的是序列、矩阵、树（例如可以学习语法解析树），所以GAN现在最常用的就是生成以假乱真的图片，因此是一种结构化学习。  GAN的主要目的就是拟合一个真实数据的分布，从而能够获得一个能够以假乱真的『生成器』，通过输入随机的噪声得到一个不能被轻">
-<meta property="og:image" content="http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/pics/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/pics/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/pics/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/pics/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/pics/5.png">
-<meta property="og:updated_time" content="2019-10-13T07:44:19.562Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/pics/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/pics/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/pics/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/pics/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/pics/5.png">
+<meta property="og:updated_time" content="2019-10-13T09:46:03.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjc_Generative-Adversarial-Network-GAN-KL-Divergence">
+<meta name="twitter:title" content="『Xu』Generative Adversarial Network (GAN) &#x2F; KL Divergence">
 <meta name="twitter:description" content="首先作为题外话，先介绍一下GAN其实是一种结构化学习。平是最常见的拟合/回归是一种非结构化学习，它们输出的是标量或者向量这些简单的数据，但是对于结构化学习可能输出的是序列、矩阵、树（例如可以学习语法解析树），所以GAN现在最常用的就是生成以假乱真的图片，因此是一种结构化学习。  GAN的主要目的就是拟合一个真实数据的分布，从而能够获得一个能够以假乱真的『生成器』，通过输入随机的噪声得到一个不能被轻">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/pics/1.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/pics/1.png">
     
     
         
@@ -41,7 +41,7 @@
         
     
     <!-- title -->
-    <title>xjc_Generative-Adversarial-Network-GAN-KL-Divergence</title>
+    <title>『Xu』Generative Adversarial Network (GAN) / KL Divergence</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -79,10 +79,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』Densely-Connected-Convolutional-Networks-Unit-Convolution-Kernel/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -95,16 +95,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&text=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&is_video=false&description=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Generative-Adversarial-Network-GAN-KL-Divergence&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&name=xjc_Generative-Adversarial-Network-GAN-KL-Divergence&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&text=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&is_video=false&description=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』Generative Adversarial Network (GAN) / KL Divergence&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&name=『Xu』Generative Adversarial Network (GAN) / KL Divergence&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -121,7 +121,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        xjc_Generative-Adversarial-Network-GAN-KL-Divergence
+        『Xu』Generative Adversarial Network (GAN) / KL Divergence
     </h1>
 
 
@@ -132,7 +132,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2019-10-13T07:41:45.000Z" itemprop="datePublished">2019-10-13</time>
+        <time datetime="2019-10-13T09:45:31.000Z" itemprop="datePublished">2019-10-13</time>
     </div>
 
 
@@ -195,16 +195,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&text=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&is_video=false&description=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Generative-Adversarial-Network-GAN-KL-Divergence&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&title=xjc_Generative-Adversarial-Network-GAN-KL-Divergence"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/&name=xjc_Generative-Adversarial-Network-GAN-KL-Divergence&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&text=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&is_video=false&description=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』Generative Adversarial Network (GAN) / KL Divergence&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&title=『Xu』Generative Adversarial Network (GAN) / KL Divergence"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/&name=『Xu』Generative Adversarial Network (GAN) / KL Divergence&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

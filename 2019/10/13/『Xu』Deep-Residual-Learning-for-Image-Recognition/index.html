@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="很久之前看的ResNet，现在对它粗略的整理一下。 Link: ResNet  首先在训练层数很深的神经网络的时候会存在两个问题。  $Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」在back propagation中链式法则求导的公式如下所示   $\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xjc_Deep-Residual-Learning-for-Image-Recognition">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/index.html">
+<meta property="og:title" content="『Xu』Deep Residual Learning for Image Recognition">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/index.html">
 <meta property="og:site_name" content="inside SteveChao">
 <meta property="og:description" content="很久之前看的ResNet，现在对它粗略的整理一下。 Link: ResNet  首先在训练层数很深的神经网络的时候会存在两个问题。  $Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」在back propagation中链式法则求导的公式如下所示   $\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-0fea77af6f4cd8c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-9ec5609d6acfc97c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-60d2acc173e8de80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-10-13T07:43:48.992Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/pics/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/pics/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/pics/3.png">
+<meta property="og:updated_time" content="2019-10-13T09:34:36.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjc_Deep-Residual-Learning-for-Image-Recognition">
+<meta name="twitter:title" content="『Xu』Deep Residual Learning for Image Recognition">
 <meta name="twitter:description" content="很久之前看的ResNet，现在对它粗略的整理一下。 Link: ResNet  首先在训练层数很深的神经网络的时候会存在两个问题。  $Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」在back propagation中链式法则求导的公式如下所示   $\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15341440-0fea77af6f4cd8c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/pics/1.png">
     
     
         
@@ -39,7 +39,7 @@
         
     
     <!-- title -->
-    <title>xjc_Deep-Residual-Learning-for-Image-Recognition</title>
+    <title>『Xu』Deep Residual Learning for Image Recognition</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -77,10 +77,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/10/13/xjc-ClusterNet-Deep-Hierarchical-Cluster-Network-with-Rigorously-Rotation-Invariant-Representation-for-Point-Cloud-Analysis/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/PyTorch-数据操作/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -93,16 +93,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&text=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&is_video=false&description=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Deep-Residual-Learning-for-Image-Recognition&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&name=xjc_Deep-Residual-Learning-for-Image-Recognition&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&text=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&is_video=false&description=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』Deep Residual Learning for Image Recognition&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&name=『Xu』Deep Residual Learning for Image Recognition&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -119,7 +119,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        xjc_Deep-Residual-Learning-for-Image-Recognition
+        『Xu』Deep Residual Learning for Image Recognition
     </h1>
 
 
@@ -130,7 +130,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2019-10-13T07:41:31.000Z" itemprop="datePublished">2019-10-13</time>
+        <time datetime="2019-10-13T09:23:59.000Z" itemprop="datePublished">2019-10-13</time>
     </div>
 
 
@@ -148,7 +148,7 @@
 <ul>
 <li><strong>$Q_1:$ 梯度爆炸 / 梯度消失 「Gradient Exploding / Gradient Vanishing」</strong><br>在back propagation中链式法则求导的公式如下所示</li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-0fea77af6f4cd8c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="back propagation"></p>
+<p><img src="pics/1.png" alt="back propagation"></p>
 <p>$\sigma^{‘}$表示的是对激活函数的求导，激活函数可以是sigmoid以及更常用的ReLU，其中对于sigmoid求导的最大值是1/4，而对于relu求导的最大值是1，同时权重$w$是通常是通过正态分布的方式产生的，所以$w$的值大多数分布在0附近，从而导致$\prod{w}$的值很小，从而出现了梯度消失的现象。而如果恰好$w$的值比较大(相比于1)，那么就会导致$\prod{w}$出现爆炸的现象。</p>
 <p>但是这个问题已经被「Batch Normalization」解决了。通过对每一层的参数进行Normalize，利用标准差$\sigma$来scale对应的权重，使得小的权重变大，大的权重变小，从而缓解了梯度消失或者是梯度爆炸的现象。</p>
 <p>More details: <a href="https://www.zhihu.com/question/38102762/answer/391649040" target="_blank" rel="noopener">https://www.zhihu.com/question/38102762/answer/391649040</a></p>
@@ -159,7 +159,7 @@
 <p>观察Fig.1的左边的网络，如果由浅层网络输出的结果x已经达到了最优解，那么只需要将接下来的两层神经层训练为Identity Map，即恒等变换就可以保证输出的结果不会变差，但是实际上出现的现象就是，堆叠更多的网络层会导致Degradation。「作者在论文中一开始是认为，更深的网络由于其梯度下降的比较慢所以使得效果变差，因此尝试利用3倍的迭代次数进行训练，但是效果仍然没有变好，因此他认为不能将这个问题简单地归咎于梯度下降速度慢。」</p>
 <p>面对这个Degradation的现象，作者认为两层网络拟合一个Identity Map的难度比较大，因此作者放弃了拟合恒等变换而拟合残差「Residual」F(x)=H(x)-x，如果浅层的输出x真的已经达到了最优，那么只需要让新堆叠的网络层拟合全0的输出(F(x)=0)即可，而拟合全0相比于拟合一个恒等变换的难度大大减小。在真实的情况中，往往并不会真正只要求一个恒等变换，但是由于在深层网络中前面几层的网络已经拟合了大部分内容，而后面叠加的新网络只需要对前面的输出学习一些比较小的扰动「Perturbations」即可，因此这个学习也是比较容易的。</p>
 <p>所以作者建立了一个如图Fig.1 右边所示的block，将浅层网络的输出直接通过skip connection直接送到后面。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-9ec5609d6acfc97c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fig.1 "></p>
+<p><img src="pics/2.png" alt="Fig.1 "></p>
 <hr>
 <p>整个Residual Block的优点如下所示</p>
 <ul>
@@ -176,7 +176,7 @@
 </ol>
 </li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-60d2acc173e8de80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Bottleneck"></p>
+<p><img src="pics/3.png" alt="Bottleneck"></p>
 <h3 id="BOTTLENECK"><a href="#BOTTLENECK" class="headerlink" title="BOTTLENECK"></a>BOTTLENECK</h3><p>当我们更加细致的观察ResNet的细节的时候，我们能够发现ResNet中还使用了一个「Bottleneck」模块，如上图所示，充分地利用了<strong>单位卷积核</strong>，输入数据的维数（如原先是256维）先被减少（变为64维），然后使得一个size比较大的卷积核能够在比较小的维度上进行操作，然后再利用一个单位卷积核将减小的维度（64维）重新放大到原来的样子（256维）。从而能够在处理更加大的维度的特征的同时，保持一个比较小的计算时间。</p>
 
   </div>
@@ -211,16 +211,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&text=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&is_video=false&description=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Deep-Residual-Learning-for-Image-Recognition&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&title=xjc_Deep-Residual-Learning-for-Image-Recognition"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/&name=xjc_Deep-Residual-Learning-for-Image-Recognition&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&text=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&is_video=false&description=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』Deep Residual Learning for Image Recognition&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&title=『Xu』Deep Residual Learning for Image Recognition"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/&name=『Xu』Deep Residual Learning for Image Recognition&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

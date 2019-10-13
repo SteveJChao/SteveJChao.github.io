@@ -2,44 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Reading-Note%E3%80%8C1%E3%80%8D-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8F3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/</loc>
     
-    <lastmod>2019-10-13T07:46:08.300Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/</loc>
-    
-    <lastmod>2019-10-13T07:45:39.229Z</lastmod>
+    <lastmod>2019-10-13T09:53:47.508Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FClusterNet-Deep-Hierarchical-Cluster-Network-with-Rigorously-Rotation-Invariant-Representation-for-Point-Cloud-Analysis/</loc>
     
-    <lastmod>2019-10-13T07:44:46.170Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/</loc>
-    
-    <lastmod>2019-10-13T07:44:19.562Z</lastmod>
+    <lastmod>2019-10-13T09:51:25.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FDensely-Connected-Convolutional-Networks-Unit-Convolution-Kernel/</loc>
     
-    <lastmod>2019-10-13T07:43:48.992Z</lastmod>
+    <lastmod>2019-10-13T09:49:13.012Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-ClusterNet-Deep-Hierarchical-Cluster-Network-with-Rigorously-Rotation-Invariant-Representation-for-Point-Cloud-Analysis/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FGenerative-Adversarial-Network-GAN-KL-Divergence/</loc>
     
-    <lastmod>2019-10-13T07:43:18.314Z</lastmod>
+    <lastmod>2019-10-13T09:46:03.189Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FKPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/</loc>
+    
+    <lastmod>2019-10-13T09:41:15.494Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FParametric-Continuous-Convolutions-SpiderCNN/</loc>
+    
+    <lastmod>2019-10-13T09:35:44.286Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FDeep-Residual-Learning-for-Image-Recognition/</loc>
+    
+    <lastmod>2019-10-13T09:34:36.567Z</lastmod>
     
   </url>
   

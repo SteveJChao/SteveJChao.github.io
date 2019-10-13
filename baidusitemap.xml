@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Reading-Note%E3%80%8C1%E3%80%8D-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8F3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FClusterNet-Deep-Hierarchical-Cluster-Network-with-Rigorously-Rotation-Invariant-Representation-for-Point-Cloud-Analysis/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FDensely-Connected-Convolutional-Networks-Unit-Convolution-Kernel/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FGenerative-Adversarial-Network-GAN-KL-Divergence/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-Deep-Residual-Learning-for-Image-Recognition/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FKPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/10/13/xjc-ClusterNet-Deep-Hierarchical-Cluster-Network-with-Rigorously-Rotation-Invariant-Representation-for-Point-Cloud-Analysis/</loc>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FParametric-Continuous-Convolutions-SpiderCNN/</loc>
+    <lastmod>2019-10-13</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8FDeep-Residual-Learning-for-Image-Recognition/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/10/13/PyTorch-%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/</loc>

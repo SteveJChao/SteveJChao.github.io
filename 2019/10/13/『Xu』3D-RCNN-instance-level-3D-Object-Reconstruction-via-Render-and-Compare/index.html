@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="文章链接  这篇文章主要介绍的就是如何利用单幅二维图像对物体进行三维重建。从最传统的计算机视觉算法中可以了解到通过对同一物体多个角度的拍摄图像可以进行深度的计算，并进行三维重建。但是随着深度学习的发展已经有大量的工作在做关于单幅图像的三维重建，这次提出的3D-RCNN模型就是基于Fast-RCNN开发出来的实现单幅图像的三维重建的模型。  这个模型中提出了一种表征三维物体的shape和pose的方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/index.html">
+<meta property="og:title" content="『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/index.html">
 <meta property="og:site_name" content="inside SteveChao">
 <meta property="og:description" content="文章链接  这篇文章主要介绍的就是如何利用单幅二维图像对物体进行三维重建。从最传统的计算机视觉算法中可以了解到通过对同一物体多个角度的拍摄图像可以进行深度的计算，并进行三维重建。但是随着深度学习的发展已经有大量的工作在做关于单幅图像的三维重建，这次提出的3D-RCNN模型就是基于Fast-RCNN开发出来的实现单幅图像的三维重建的模型。  这个模型中提出了一种表征三维物体的shape和pose的方">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-dff660991acc5604.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-2431cc2825a4a5bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-77bcdf65799507bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-4e360375598c222f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-10-13T07:46:08.300Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/pics/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/pics/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/pics/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/pics/4.png">
+<meta property="og:updated_time" content="2019-10-13T09:53:47.508Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare">
+<meta name="twitter:title" content="『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare">
 <meta name="twitter:description" content="文章链接  这篇文章主要介绍的就是如何利用单幅二维图像对物体进行三维重建。从最传统的计算机视觉算法中可以了解到通过对同一物体多个角度的拍摄图像可以进行深度的计算，并进行三维重建。但是随着深度学习的发展已经有大量的工作在做关于单幅图像的三维重建，这次提出的3D-RCNN模型就是基于Fast-RCNN开发出来的实现单幅图像的三维重建的模型。  这个模型中提出了一种表征三维物体的shape和pose的方">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15341440-dff660991acc5604.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/pics/1.png">
     
     
         
@@ -40,7 +40,7 @@
         
     
     <!-- title -->
-    <title>xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare</title>
+    <title>『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -79,7 +79,7 @@
       <ul>
         
         
-        <li><a class="icon" href="/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』ClusterNet-Deep-Hierarchical-Cluster-Network-with-Rigorously-Rotation-Invariant-Representation-for-Point-Cloud-Analysis/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -92,16 +92,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&text=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&is_video=false&description=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&name=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&text=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&is_video=false&description=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&name=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -118,7 +118,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare
+        『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare
     </h1>
 
 
@@ -129,7 +129,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2019-10-13T07:42:30.000Z" itemprop="datePublished">2019-10-13</time>
+        <time datetime="2019-10-13T09:53:20.000Z" itemprop="datePublished">2019-10-13</time>
     </div>
 
 
@@ -143,18 +143,18 @@
     <p><a href="http://openaccess.thecvf.com/content_cvpr_2018/CameraReady/1128.pdf" target="_blank" rel="noopener">文章链接</a></p>
 <hr>
 <p>这篇文章主要介绍的就是如何利用单幅二维图像对物体进行三维重建。从最传统的计算机视觉算法中可以了解到通过对同一物体多个角度的拍摄图像可以进行深度的计算，并进行三维重建。但是随着深度学习的发展已经有大量的工作在做关于单幅图像的三维重建，这次提出的3D-RCNN模型就是基于Fast-RCNN开发出来的实现单幅图像的三维重建的模型。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-dff660991acc5604.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Network Architecture"></p>
+<p><img src="pics/1.png" alt="Network Architecture"></p>
 <p>这个模型中提出了一种表征三维物体的shape和pose的方式。将抽象的这两个特征转化为可以用参数表示。</p>
 <h3 id="1-物体形状表征"><a href="#1-物体形状表征" class="headerlink" title="1. 物体形状表征"></a>1. 物体形状表征</h3><p>作者利用了CAD中提供的大量3D模型，将每一个模型都用volumetric form表示，然后利用PCA提取出了每一类模型shape的十个基向量，利用这十个基向量构成的特征空间来表征每一类模型的shape。所以对于任意一个3D模型，其shape可以用对应类别的十个基向量的线性组合来表示，从而使3D模型的shape representation变得简单。</p>
 <h3 id="2-物体姿态表征"><a href="#2-物体姿态表征" class="headerlink" title="2. 物体姿态表征"></a>2. 物体姿态表征</h3><p>首先作者认为物体的姿态可以有两种表示方法，一种是egocentric（以自我为中心），另一种是allocentric（以异我为中心）。从下图中可以看到在allocentric情况下，只要是allocentric的角度相同那么所获得的图像就是相同的，同时考虑到我们的重建是以图像feature为基础的，所以为了保证在面对相同的feature时得到结果的唯一性，故采用了allocentric pose。在allocenric下每个pose的表示方法为$v=[\theta, \phi, \psi]$. $\theta, \phi, \psi$代表azimuth, elevation, and tilt angles.</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-2431cc2825a4a5bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Egocentric vs. Allocentric"></p>
+<p><img src="pics/2.png" alt="Egocentric vs. Allocentric"></p>
 <p>为了实现姿态估计，直接从单幅图像直接利用深度神经网络进行估计是<a href="https://baike.baidu.com/item/不适定问题/10199152?fr=aladdin" target="_blank" rel="noopener">ill-posed problem</a>，原理上证明只能在很局限的条件下实现这个目的。所以作者利用神经网络预测出2D projection of the canonical object center and 2D amodal bounding box. 然后利用基础的变换就可以恢复成需要的object pose.</p>
 <p>接下来整个网络中还有几个重要的点。</p>
 <p>首先由于网络模型采用的是Fast-RCNN的结构，里面使用了ROI pooling的技术，目的是为了让不同size的ROI能够被normalize到一个固定的大小，从而保证之后的全联接层能够使用（因为全联接层的输入是固定的，而ROI的大小是不一样的）。也正是因为这个ROI pooling的技术，使得feature map变化了之后，对应的amodal bounding box和center projection都需要做对应的normalize，不然在原feature上的位置（box的大小）可能会与pooling后feature上的位置（大小）出现不符，例如原来的box中只有一个人，pooling之后，用同样的box可能会导致选中了多个人。而这样的normalize，可以在最后的输出阶段进行恢复。</p>
 <p>其次，上述的normalize仅仅适用在预测amodal bounding box和center projection的时候，而对于三维空间中的shape和pose的预测则无法使用。但是在预测中同样也需要考虑进这个ROI pooling的操作带来的影响，即原文中提到的underlying 2D transformation.作者的做法就是将POI pooling看作是一种齐次变换，通过capture这个变换，用一个矩阵表示，将矩阵的参数放入feature中进行联合训练，从而提供underlying 2D transformation的信息。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-77bcdf65799507bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Underlying 2D transformation"></p>
+<p><img src="pics/3.png" alt="Underlying 2D transformation"></p>
 <p>同时作者还提到了，在预测pose和shape参数的时候，虽然可以直接使用回归的方法来进行预测，但是如果利用分类来做会有更好的效果，所以作者提出的预测pose和shape的loss就综合了分类以及回归。利用分类来做回归的方法就是将整个range分为多个bin，然后将输出分类到对应的bin上去，可以考虑用每个bin的中值来作为回归的结果。这一步如果采用的是最简单的做法 应该是通过argmax选择概率最大的那一个bin，然后这个bin的中值就是对应的输出值，但是由于argmax是不可微的，所以会造成求梯度时的问题，所以才用了<a href="http://www.cnblogs.com/king-lps/p/9937440.html" target="_blank" rel="noopener">softargmax</a>的方法。所以采用softargmax的方法计算每个shape参数的公式如下。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-4e360375598c222f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="pics/4.png" alt=""></p>
 <p>其中FC层输出的应该是类似于分类网络中的logits，需要再加一层softmax来表示概率，否则会导致和不为1。</p>
 <p>最后作者还提出了一个<em>Render-and-Compare Loss</em>，我认为具体的做法就是通过将上述方法得到的object的3D模型加工（Render也有加工的意思）成2D Segmentation mask/2D Depth map，然后与ground truth的2D Segmentation mask/2D Depth map计算loss，用来进一步精细化输出的结果。同时ground truth的2D Segmentation mask/2D Depth map是比较容易获得的annotation。</p>
 <hr>
@@ -192,16 +192,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&text=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&is_video=false&description=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&name=xjc_Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&text=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&is_video=false&description=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&title=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/&name=『Xu』3D-RCNN: instance-level 3D Object Reconstruction via Render-and-Compare&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

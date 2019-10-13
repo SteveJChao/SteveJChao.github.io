@@ -8,23 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Paper One:Deep Parametric Continuous Convolutional Neural Networks  在离散卷积中，卷积核的权重是一个需要学习的参数，是通过直接给定卷积模板中的某个位置对应的初始权重来学习的。例如离散卷积中的卷积核$g$应该是这样的$$S\rightarrow {R} ,S={-M,-M+1,…,M-1,M}$$也就是可以将g想象成一个大小固定的离">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xjc_Parametric-Continuous-Convolutions-SpiderCNN">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/index.html">
+<meta property="og:title" content="『Xu』Parametric Continuous Convolutions &#x2F; SpiderCNN">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/index.html">
 <meta property="og:site_name" content="inside SteveChao">
 <meta property="og:description" content="Paper One:Deep Parametric Continuous Convolutional Neural Networks  在离散卷积中，卷积核的权重是一个需要学习的参数，是通过直接给定卷积模板中的某个位置对应的初始权重来学习的。例如离散卷积中的卷积核$g$应该是这样的$$S\rightarrow {R} ,S={-M,-M+1,…,M-1,M}$$也就是可以将g想象成一个大小固定的离">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-67dc46e3acd93a82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-af948dc2faf7ceed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-bbfbbc034ace7a5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-a0b0d96b69cfeaa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-9f36375d6bbe6fdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-8e36a09b13b65ebe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-ca14a5c63378c42b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-a82fa83373b34d55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-10-13T07:45:39.229Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/8.png">
+<meta property="og:updated_time" content="2019-10-13T09:35:44.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjc_Parametric-Continuous-Convolutions-SpiderCNN">
+<meta name="twitter:title" content="『Xu』Parametric Continuous Convolutions &#x2F; SpiderCNN">
 <meta name="twitter:description" content="Paper One:Deep Parametric Continuous Convolutional Neural Networks  在离散卷积中，卷积核的权重是一个需要学习的参数，是通过直接给定卷积模板中的某个位置对应的初始权重来学习的。例如离散卷积中的卷积核$g$应该是这样的$$S\rightarrow {R} ,S={-M,-M+1,…,M-1,M}$$也就是可以将g想象成一个大小固定的离">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15341440-67dc46e3acd93a82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/pics/1.png">
     
     
         
@@ -44,7 +44,7 @@
         
     
     <!-- title -->
-    <title>xjc_Parametric-Continuous-Convolutions-SpiderCNN</title>
+    <title>『Xu』Parametric Continuous Convolutions / SpiderCNN</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -82,10 +82,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2019/10/13/xjc-Reading-Note「1」-3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』Deep-Residual-Learning-for-Image-Recognition/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -98,16 +98,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&text=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&is_video=false&description=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Parametric-Continuous-Convolutions-SpiderCNN&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&name=xjc_Parametric-Continuous-Convolutions-SpiderCNN&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&text=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&is_video=false&description=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』Parametric Continuous Convolutions / SpiderCNN&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&name=『Xu』Parametric Continuous Convolutions / SpiderCNN&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -124,7 +124,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        xjc_Parametric-Continuous-Convolutions-SpiderCNN
+        『Xu』Parametric Continuous Convolutions / SpiderCNN
     </h1>
 
 
@@ -135,7 +135,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2019-10-13T07:42:12.000Z" itemprop="datePublished">2019-10-13</time>
+        <time datetime="2019-10-13T09:27:41.000Z" itemprop="datePublished">2019-10-13</time>
     </div>
 
 
@@ -147,23 +147,23 @@
 
   <div class="content" itemprop="articleBody">
     <p>Paper One:<br><a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Wang_Deep_Parametric_Continuous_CVPR_2018_paper.pdf" target="_blank" rel="noopener">Deep Parametric Continuous Convolutional Neural Networks</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-67dc46e3acd93a82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="离散卷积"><br><img src="https://upload-images.jianshu.io/upload_images/15341440-af948dc2faf7ceed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="经过Approximate之后的连续卷积"></p>
+<p><img src="pics/1.png" alt="离散卷积"><br><img src="pics/2.png" alt="经过Approximate之后的连续卷积"></p>
 <p>在离散卷积中，卷积核的权重是一个需要学习的参数，是通过直接给定卷积模板中的某个位置对应的初始权重来学习的。例如离散卷积中的卷积核$g$应该是这样的<br>$$<br>S\rightarrow {R} ,S={-M,-M+1,…,M-1,M}<br>$$<br>也就是可以将g想象成一个大小固定的离散的数组，可以通过下标「也就是离散点的位置或者是图像的位置」来得到对应的参数/权重。但是很明显这样的参数分配方式在点云卷积的过程中是不能被使用的，因为三维点的位置是不固定的，不一定是离散的，所以不能通过下标的方式去得到数组的参数「有点类似与连续函数和数组的区别，连续函数的x坐标是连续的」。所以文章只能通过一个通过参数控制的连续函数来表示卷积核「<strong><em>Parametric Continuous Convolutions</em></strong>」</p>
 <p>所以整个核函数就是一个布满整个空间的连续函数，在二维场景下如下图所示</p>
-<center><img src="https://upload-images.jianshu.io/upload_images/15341440-bbfbbc034ace7a5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="核函数热力图"></center>
+<center><img src="pics/3.png" alt="核函数热力图"></center>
 
 <p>因此为了得到一个在空间中连续的函数，作者使用了 Multi-Layer Perceptron 来拟合核函数。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-a0b0d96b69cfeaa3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="核函数"></p>
+<p><img src="pics/4.png" alt="核函数"></p>
 <hr>
 <p>Paper Two<br><a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Yifan_Xu_SpiderCNN_Deep_Learning_ECCV_2018_paper.pdf" target="_blank" rel="noopener">SpiderCNN: Deep Learning on Point Sets with Parameterized Convolutional Filters</a></p>
 <p>提出了一种新的卷积核，这个卷积核是由两个函数组成的，一个是简单的阶跃函数「输入在某一个范围内，输出的值是一个常数」，第二个是三阶的泰勒展开式。</p>
-<p>整个卷积的过程如下所示<br><img src="https://upload-images.jianshu.io/upload_images/15341440-9f36375d6bbe6fdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Convolution Operation"><br>$\widetilde{F}_i$代表的是输出层的feature，$F_v$表示的是输入层第$v$个节点的input feature，可以看到卷积核$g_i$是由b个泰勒展开式以及b个对应的可训练常数组成的。</p>
+<p>整个卷积的过程如下所示<br><img src="pics/5.png" alt="Convolution Operation"><br>$\widetilde{F}_i$代表的是输出层的feature，$F_v$表示的是输入层第$v$个节点的input feature，可以看到卷积核$g_i$是由b个泰勒展开式以及b个对应的可训练常数组成的。</p>
 <ul>
-<li>可训练常数：<br><img src="https://upload-images.jianshu.io/upload_images/15341440-8e36a09b13b65ebe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/15341440-ca14a5c63378c42b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="可训练常数"></li>
+<li>可训练常数：<br><img src="pics/6.png" alt=""><br><img src="pics/7.png" alt="可训练常数"></li>
 </ul>
 <p>这个常数就是阶跃函数，从定义中我们可以看到，它是与邻域内的点与球心的半径有关的。</p>
 <ul>
-<li>三阶泰勒展开式：<br><img src="https://upload-images.jianshu.io/upload_images/15341440-a82fa83373b34d55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三阶泰勒展开式"><br>因此，通过邻域内的每一个点的相对位置可以与可训练的权重加权得到泰勒权重。</li>
+<li>三阶泰勒展开式：<br><img src="pics/8.png" alt="三阶泰勒展开式"><br>因此，通过邻域内的每一个点的相对位置可以与可训练的权重加权得到泰勒权重。</li>
 </ul>
 <hr>
 <h3 id="CONLUSION"><a href="#CONLUSION" class="headerlink" title="CONLUSION"></a><strong><em>CONLUSION</em></strong></h3><p>现在大部分的所谓的直接对于点操作的「convolution」，其实都是类似于图神经网络的。</p>
@@ -206,16 +206,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&text=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&is_video=false&description=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_Parametric-Continuous-Convolutions-SpiderCNN&body=Check out this article: http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&title=xjc_Parametric-Continuous-Convolutions-SpiderCNN"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/&name=xjc_Parametric-Continuous-Convolutions-SpiderCNN&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&text=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&is_video=false&description=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』Parametric Continuous Convolutions / SpiderCNN&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&title=『Xu』Parametric Continuous Convolutions / SpiderCNN"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/&name=『Xu』Parametric Continuous Convolutions / SpiderCNN&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

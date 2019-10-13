@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="文章链接 不得不感叹大佬终归是大佬，Charles R. Qi在3D视觉上真的是做出了很多优秀的工作，同为浙江人怎么差距这么大 :)本文提出了新的卷积核「Point Convolution」首先可以简单的回顾二维Grid Kernel 卷积核在空间中（二维平面上）的固定位置提供一个固定的weight，因此将这样的思路借鉴到Irregular Kernel上来（包括二维或者三维）就应该是如下所示的在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/index.html">
+<meta property="og:title" content="『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/index.html">
 <meta property="og:site_name" content="inside SteveChao">
 <meta property="og:description" content="文章链接 不得不感叹大佬终归是大佬，Charles R. Qi在3D视觉上真的是做出了很多优秀的工作，同为浙江人怎么差距这么大 :)本文提出了新的卷积核「Point Convolution」首先可以简单的回顾二维Grid Kernel 卷积核在空间中（二维平面上）的固定位置提供一个固定的weight，因此将这样的思路借鉴到Irregular Kernel上来（包括二维或者三维）就应该是如下所示的在">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-ea638e1dc0ab0f11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-b2d11f3b85b114b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-05eb9077c3c55035.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-f8c58bf5f5d925c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15341440-e3eae4b3db083c87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-10-13T07:44:46.170Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/pics/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/pics/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/pics/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/pics/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/pics/5.png">
+<meta property="og:updated_time" content="2019-10-13T09:41:15.494Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds">
+<meta name="twitter:title" content="『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds">
 <meta name="twitter:description" content="文章链接 不得不感叹大佬终归是大佬，Charles R. Qi在3D视觉上真的是做出了很多优秀的工作，同为浙江人怎么差距这么大 :)本文提出了新的卷积核「Point Convolution」首先可以简单的回顾二维Grid Kernel 卷积核在空间中（二维平面上）的固定位置提供一个固定的weight，因此将这样的思路借鉴到Irregular Kernel上来（包括二维或者三维）就应该是如下所示的在">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15341440-ea638e1dc0ab0f11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/pics/1.png">
     
     
         
@@ -41,7 +41,7 @@
         
     
     <!-- title -->
-    <title>xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds</title>
+    <title>『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -79,10 +79,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2019/10/13/xjc-Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/10/13/xjc-Generative-Adversarial-Network-GAN-KL-Divergence/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/10/13/『Xu』Parametric-Continuous-Convolutions-SpiderCNN/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -95,16 +95,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&text=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&is_video=false&description=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds&body=Check out this article: http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&name=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&text=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&is_video=false&description=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&name=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -121,7 +121,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds
+        『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds
     </h1>
 
 
@@ -132,7 +132,7 @@
       </span>
       
     <div class="postdate">
-        <time datetime="2019-10-13T07:41:59.000Z" itemprop="datePublished">2019-10-13</time>
+        <time datetime="2019-10-13T09:40:55.000Z" itemprop="datePublished">2019-10-13</time>
     </div>
 
 
@@ -145,11 +145,11 @@
   <div class="content" itemprop="articleBody">
     <p><a href="https://arxiv.org/pdf/1904.08889.pdf" target="_blank" rel="noopener">文章链接</a></p>
 <h2 id="不得不感叹大佬终归是大佬，Charles-R-Qi在3D视觉上真的是做出了很多优秀的工作，同为浙江人怎么差距这么大"><a href="#不得不感叹大佬终归是大佬，Charles-R-Qi在3D视觉上真的是做出了很多优秀的工作，同为浙江人怎么差距这么大" class="headerlink" title="不得不感叹大佬终归是大佬，Charles R. Qi在3D视觉上真的是做出了很多优秀的工作，同为浙江人怎么差距这么大 :)"></a>不得不感叹大佬终归是大佬，<a href="https://web.stanford.edu/~rqi/" target="_blank" rel="noopener">Charles R. Qi</a>在3D视觉上真的是做出了很多优秀的工作，同为浙江人怎么差距这么大 :)</h2><p>本文提出了新的卷积核「Point Convolution」<br>首先可以简单的回顾二维Grid Kernel</p>
-<center><img src="https://upload-images.jianshu.io/upload_images/15341440-ea638e1dc0ab0f11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Grid Kernel"></center><br>卷积核在空间中（二维平面上）的固定位置提供一个固定的weight，因此将这样的思路借鉴到Irregular Kernel上来（包括二维或者三维）就应该是如下所示的<br><center><img src="https://upload-images.jianshu.io/upload_images/15341440-b2d11f3b85b114b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Irregular Kernel"></center><br>在一个连续的空间中固定某几个点，然后这几个点也可以提供权重。这些点在文章中被称为「Kernel Point」，这也是「Point Convolution」这个名字的由来（我认为）。<br><br>考虑卷积操作<br><br><center><img src="https://upload-images.jianshu.io/upload_images/15341440-05eb9077c3c55035.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></center>
+<center><img src="pics/1.png" alt="Grid Kernel"></center><br>卷积核在空间中（二维平面上）的固定位置提供一个固定的weight，因此将这样的思路借鉴到Irregular Kernel上来（包括二维或者三维）就应该是如下所示的<br><center><img src="pics/2.png" alt="Irregular Kernel"></center><br>在一个连续的空间中固定某几个点，然后这几个点也可以提供权重。这些点在文章中被称为「Kernel Point」，这也是「Point Convolution」这个名字的由来（我认为）。<br><br>考虑卷积操作<br><br><center><img src="pics/3.png" alt=""></center>
 
 <p>$g$表示的就是卷积核，对于一个领域$N_x$，通过每个点与centroid的位置关系，求得对应的权重，并加权得到卷积的输出。因此卷积操作的核心就是对$g$的定义方式。</p>
 <p>在point convolution中，$g$的定义如下</p>
-<center><img src="https://upload-images.jianshu.io/upload_images/15341440-f8c58bf5f5d925c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></center>
+<center><img src="pics/4.png" alt=""></center>
 
 <p>其中$y_i=x_i-x$</p>
 <p>我们可以这样理解，每一个neighbor的权重是通过所有kernel point根据其与neighbor的关系加权得到的，因此每一个neighbor都与所有kernel point有关系。我想这也是<strong><em>Point Convolution &amp; Graph Convolution</em></strong>之间的区别，Graph Convolution通过的是Edge Convolution，每一个neighbor的权重是通过从neighbor与centroid的边信息里提取的。作者在文章中是这么介绍两者的不同之处的</p>
@@ -157,7 +157,7 @@
 <p>Despite the similarity between point convolutions and the most recent graph convolutions [39, 43], the latter learn filters on edge relationships instead of points relative positions. In other words, a graph convolution combines features on local surface patches, while being invariant to the deformations of those patches in Euclidean space. In contrast, KPConv combines features locally according to the 3D geometry, thus capturing the deformations of the surfaces.</p>
 </blockquote>
 <p>其中如何作为衡量每个neighbor与每个kernel point之间的关系的函数$h$，其被定义为</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15341440-e3eae4b3db083c87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="pics/5.png" alt=""></p>
 <p>介绍了如何通过给定的基于point的kernel进行convolution之后，一个很重要的问题就是如果对kernel中的点进行位置的固定。例如grid kernel，每一个pixel都会有一个固定的位置。</p>
 <p>因此作者提出了两种不同的kernel</p>
 <ul>
@@ -200,16 +200,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&text=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&is_video=false&description=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds&body=Check out this article: http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/xjc-KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&name=xjc_KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&text=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&is_video=false&description=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds&body=Check out this article: http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&title=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/10/13/『Xu』KPConv-Flexible-and-Deformable-Convolution-for-Point-Clouds/&name=『Xu』KPConv: Flexible and Deformable Convolution for Point Clouds&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
