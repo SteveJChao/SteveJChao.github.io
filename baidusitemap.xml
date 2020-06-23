@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2019/11/17/Fuck-you-all/</loc>
-    <lastmod>2019-11-16</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/2019/10/13/%E3%80%8EXu%E3%80%8F3D-RCNN-instance-level-3D-Object-Reconstruction-via-Render-and-Compare/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
@@ -28,27 +25,6 @@
     <loc>http://yoursite.com/2019/10/13/PyTorch-%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2019-10-13</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/08/13/%E6%88%91%E5%92%8C%E9%BB%91%E5%A4%9C%E4%B8%80%E8%B5%B7%E6%83%B3%E4%BD%A0/</loc>
-    <lastmod>2019-08-12</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/08/11/%E6%B2%A1%E6%9C%89%E6%AF%94%E7%88%B1%E6%9B%B4%E7%BE%8E%E5%A5%BD%E7%9A%84%E5%AD%97%E7%9C%BC%E4%BA%86/</loc>
-    <lastmod>2019-08-10</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/07/31/%E6%80%9D%E8%80%83%E7%9A%84%E6%88%90%E9%95%BF/</loc>
-    <lastmod>2019-07-30</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/07/29/Shelter-From-the-Storm/</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/07/28/%E5%8C%97%E4%BA%AC%E5%A4%8F%E5%A4%A9%E5%8D%88%E8%A7%89%E7%9A%84%E6%A2%A6/</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/07/21/To-find-you/</loc>
-    <lastmod>2019-07-21</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/07/16/twelve-notes/</loc>
-    <lastmod>2019-07-16</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/2019/07/01/%E8%B5%B0%E4%BA%86/</loc>
     <lastmod>2019-06-30</lastmod>
   </url>  <url>
@@ -67,20 +43,11 @@
     <loc>http://yoursite.com/2019/05/30/steve%E7%9A%84%E7%94%B5%E5%BD%B1top100/</loc>
     <lastmod>2019-05-30</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/05/27/%E6%AD%BB%E4%BA%8E%E5%9B%9B%E6%9C%88/</loc>
-    <lastmod>2019-05-27</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/2019/05/27/%E6%88%91%E6%83%B3%E6%88%91%E5%A6%88%E5%A6%88%E4%BA%86/</loc>
     <lastmod>2019-05-27</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/05/26/%E6%89%80%E6%9C%89%E5%86%8D%E8%A7%81/</loc>
     <lastmod>2019-05-26</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/05/23/steve-%E7%9A%84%E4%BA%94%E6%9C%88%E5%81%A5%E8%BA%AB%E5%85%A8%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2019-05-26</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/05/25/%E7%A7%B0%E4%B9%8B%E4%B8%BA%E9%9D%92%E6%98%A5%E7%9A%84/</loc>
-    <lastmod>2019-05-25</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/05/25/%E8%87%B4%E5%AE%A4%E5%8F%8B/</loc>
     <lastmod>2019-05-25</lastmod>
@@ -93,50 +60,5 @@
   </url>  <url>
     <loc>http://yoursite.com/2019/05/11/%E4%BD%A0%E7%A6%BB%E5%BC%80%E4%BA%86%E5%8D%97%E4%BA%AC%EF%BC%8C%E4%BB%8E%E6%AD%A4%E6%B2%A1%E6%9C%89%E4%BA%BA%E5%92%8C%E6%88%91%E8%AF%B4%E8%AF%9D/</loc>
     <lastmod>2019-05-11</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/05/06/Scarborough-Fair-Canticle/</loc>
-    <lastmod>2019-05-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/05/07/%E6%88%91%EF%BC%8C%E5%96%9C%EF%BC%8C%E6%AC%A2%EF%BC%8C%E7%8C%AB/</loc>
-    <lastmod>2019-05-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/05/05/%E5%86%B3%E5%AE%9A%E4%B8%80%E7%94%9F%E5%B0%B1%E8%BF%99%E6%A0%B7%E6%B5%AA%E8%B4%B9%E4%BA%86/</loc>
-    <lastmod>2019-05-05</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/05/02/%E8%A2%AB%E5%89%B2%E8%A3%82%E7%9A%84%E7%94%9F/</loc>
-    <lastmod>2019-05-02</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/04/08/%E4%B8%80%E5%8F%AA%E7%8C%AB%E7%9A%84%E7%A6%BB%E5%8E%BB/</loc>
-    <lastmod>2019-04-08</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/04/07/SO-SO-LA-DO/</loc>
-    <lastmod>2019-04-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/04/01/OKR-of-2019/</loc>
-    <lastmod>2019-04-01</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/03/28/Someone-like-you/</loc>
-    <lastmod>2019-03-28</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/03/24/%E6%96%87%E8%BE%89%E5%92%8Cpeter/</loc>
-    <lastmod>2019-03-25</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/03/12/Farewell/</loc>
-    <lastmod>2019-03-24</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/03/04/%E7%88%B6%E4%BA%B2%E5%86%99%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/</loc>
-    <lastmod>2019-03-04</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2018/11/05/dzhf/</loc>
-    <lastmod>2018-11-04</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2018/11/05/aljwr/</loc>
-    <lastmod>2018-11-04</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2018/10/15/exbe/</loc>
-    <lastmod>2018-10-15</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2018/10/09/bxmk/</loc>
-    <lastmod>2018-10-08</lastmod>
   </url>
 </urlset>
